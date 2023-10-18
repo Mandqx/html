@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        li {
+            display: inline;
+            margin-right: 20px;
+            border: 1px solid #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        
+        li a {
+            text-decoration: none;
+            color: #000;
+        }
+        
+        ul {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+        }
+
+        li.active {
+            background-color: #b1cce7;
+            color: #ffffff;
+            border-color: #99c9f8;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="home.html" target="mainFrame">Home</a></li>
+        <li><a href="login.html" target="mainFrame">Login</a></li>
+        <li><a href="registration.html" target="mainFrame">Registration</a></li>
+        <li><a href="about.html" target="mainFrame">About</a></li>
+        <li><a href="contact.html" target="mainFrame">Contact</a></li>
+        <li><a href="portfolio.html" target="mainFrame">Portfolio</a></li>
+        <li><a href="extra.html" target="mainFrame">Extra Link</a></li>
+    </ul>
+
+    <script>
+        var links = document.getElementsByTagName('a');
+        
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function() {
+                for (var j = 0; j < links.length; j++) {
+                    links[j].parentNode.classList.remove('active');
+                }
+                this.parentNode.classList.add('active');
+            });
+        }
+    </script>
+</body>
+</html>
